@@ -1,7 +1,19 @@
 body {
 	color:#000000;
 	font-size:11pt;
-	font-family:Arial
+	font-family:Arial;
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.17, rgb(232,232,232)),
+		color-stop(0.91, rgb(241,166,15))
+	);
+		background-image: -moz-linear-gradient(
+		center bottom,
+		rgb(232,232,232) 17%,
+		rgb(241,166,15) 91%
+	);
 }
 h1 {
 	padding-top:24.0pt;
@@ -101,4 +113,49 @@ p {
 }
 .c9 {
 	font-size:14pt
+}
+#wrapper{
+	border-radius: 10px;  
+	-moz-border-radius: 10px;  
+	-webkit-border-radius: 10px;
+	
+	background-color: #FFFFFF;
+	
+	padding: 10px 40px;
+	margin: auto;
+	width: 500px;
+}
+header img{
+	float: left;
+	margin-right: 10px;
+}
+
+header h1,
+#content h3{
+	font-family: 'Pacifico', serif;
+	font-style: normal;
+	font-weight: 400;
+	text-shadow: none;
+	text-decoration: none;
+	text-transform: none;
+	letter-spacing: 0em;
+	word-spacing: 0em;
+}
+
+header h1 {
+	padding: 0;
+	font-size: 3em;
+	line-height: 1.2;
+}
+
+header h2{
+	padding: 0;
+	
+	font-size: 1.2em;
+	color: #f1a60f;
+}
+
+#content h3{
+	font-size: 1.4em;
+	line-height: 1.2;
 }
