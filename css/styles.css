@@ -9,7 +9,7 @@ body {
 		color-stop(0.17, rgb(232,232,232)),
 		color-stop(0.91, rgb(241,166,15))
 	);
-		background-image: -moz-linear-gradient(
+	background-image: -moz-linear-gradient(
 		center bottom,
 		rgb(232,232,232) 17%,
 		rgb(241,166,15) 91%
@@ -122,7 +122,7 @@ a:-webkit-any-link {
 	
 	padding: 2px;
 	
-	background: #FFFFFF;
+	background: #F1A60F;
 	-webkit-transition: background-color .5s linear;
 	-webkit-transition-property: background-color;
 	-webkit-transition-duration: 0.5s;
@@ -153,9 +153,9 @@ a.back2top{
 	padding: 10px 40px;
 	margin: 10px auto;
 
-	border-radius: 10px;  
 	-moz-border-radius: 10px;  
 	-webkit-border-radius: 10px;
+	border-radius: 10px;  
 	
 	box-shadow: 5px 5px 2px #646464; 
 	-moz-box-shadow: 5px 5px 2px #646464;  
