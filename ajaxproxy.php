@@ -134,12 +134,10 @@ curl_close($call);
 for($i = 0, $length = count($result), $sent = array(); $i < $length; ++$i){
     $value = $result[$i];
     
-    logline(print_r($value,true));
-    
     // if all headers has been sent ...
     if($value === ''){
         // send the output
-        echo implode(PHP_EOL, array_splice($result, ++$i));
+        echo $result[$i+1];
         exit;
     }else {
         // ... or send the header (do not overwrite if already sent)
