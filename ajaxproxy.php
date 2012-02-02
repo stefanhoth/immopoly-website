@@ -34,6 +34,9 @@ $WHITELIST_DOMAINS = array('immopoly.appspot.com');
  *
  **************************************/
 
+//activate output buffer
+ob_start();
+
 function logline($message=null){
 
     static $logfile = "./log.txt";
@@ -137,10 +140,9 @@ for($i = 0, $length = count($result), $sent = array(); $i < $length; ++$i){
     // if all headers has been sent ...
     if($value === ''){
         //provoke header output
-        flush();
         // send the output
         echo $result[$i+1];
-        exit;
+        ob_end_flush();
     }else {
         // ... or send the header (do not overwrite if already sent)
         $tmp = explode(':', $value);
