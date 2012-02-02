@@ -127,9 +127,6 @@ unset($headers);
 // retrieve the output
 $result = explode(PHP_EOL, curl_exec($call));
 
-logline("Test");
-logline(print_r($result,true));
-
 // nothing else to do so far (this version is not compatible with COMET)
 curl_close($call);
 
@@ -144,7 +141,13 @@ for($i = 0, $length = count($result), $sent = array(); $i < $length; ++$i){
     else {
         // ... or send the header (do not overwrite if already sent)
         $tmp = explode(':', $value);
-        header($value, !isset($sent[strtolower($tmp[0])]));
+
+        if($i + 1 < $length){
+            header($value, !isset($sent[strtolower($tmp[0])]));
+        }else{
+            //last entry is the content (I hope)
+            echo $value;
+        }
     }
 }
 
