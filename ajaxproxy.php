@@ -138,7 +138,8 @@ for($i = 0, $length = count($result), $sent = array(); $i < $length; ++$i){
     if($value === ''){
         // send the output
         logline(print_r(array_splice($result, $i+1),true));
-        exit(implode(PHP_EOL, array_splice($result, ++$i)));
+        echo implode(PHP_EOL, array_splice($result, ++$i));
+        exit;
     }else {
         // ... or send the header (do not overwrite if already sent)
         $tmp = explode(':', $value);
