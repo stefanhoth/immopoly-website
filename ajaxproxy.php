@@ -136,6 +136,8 @@ for($i = 0, $length = count($result), $sent = array(); $i < $length; ++$i){
     
     // if all headers has been sent ...
     if($value === ''){
+        //provoke header output
+        echo '';
         // send the output
         echo $result[$i+1];
         exit;
