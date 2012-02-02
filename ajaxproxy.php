@@ -34,6 +34,12 @@ $WHITELIST_DOMAINS = array('immopoly.appspot.com');
  *
  **************************************/
 
+function logline($message=null){
+
+    static $logfile = "./log.txt";
+
+    exec("echo \"".date(DATE_RFC2822)." :".$message."\" >> ".$logfile);
+}
 
 
 // if no url has been provided, exit
@@ -120,6 +126,9 @@ unset($headers);
 
 // retrieve the output
 $result = explode(PHP_EOL, curl_exec($call));
+
+logline("Test");
+logline(print_r($result,true));
 
 // nothing else to do so far (this version is not compatible with COMET)
 curl_close($call);
