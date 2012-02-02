@@ -44,7 +44,7 @@ if(!isset($_GET['url'])){
 }elseif (   is_array($WHITELIST_DOMAINS) && ! empty($WHITELIST_DOMAINS) && 
             ! in_array( parse_url($_GET['url'],PHP_URL_HOST), $WHITELIST_DOMAINS) ) 
     {
-        
+
     header('HTTP/1.1 400 Bad Request');
     header('X-Proxy-Error: URL not in WHITELIST_DOMAINS');
     exit;
@@ -71,8 +71,11 @@ $method = $_SERVER['REQUEST_METHOD'];
 
 // curl headers array
 $headers= array();
-foreach(getallheaders() as $key => $value)
-    $headers[] = $key.': '.$value;
+if(function_exists('getallheaders')){
+    foreach(getallheaders() as $key => $value){
+        $headers[] = $key.': '.$value;
+    }
+}
 
 // curl options
 $opts   = array(
