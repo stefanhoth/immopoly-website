@@ -137,18 +137,12 @@ for($i = 0, $length = count($result), $sent = array(); $i < $length; ++$i){
     // if all headers has been sent ...
     if($value === '')
         // send the output
+        logline(print_r(array_splice($result, ++$i),true));
         exit(implode(PHP_EOL, array_splice($result, ++$i)));
     else {
         // ... or send the header (do not overwrite if already sent)
         $tmp = explode(':', $value);
-
-        if($i + 1 == $length){
-            //last entry is the content (I hope)
-            logline($value);
-            echo $value;
-        }else{
-            header($value, !isset($sent[strtolower($tmp[0])]));
-        }
+        header($value, !isset($sent[strtolower($tmp[0])]));
     }
 }
 
