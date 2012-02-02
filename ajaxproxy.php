@@ -135,11 +135,11 @@ for($i = 0, $length = count($result), $sent = array(); $i < $length; ++$i){
     $value = $result[$i];
     
     // if all headers has been sent ...
-    if($value === '')
+    if($value === ''){
         // send the output
         logline(print_r(array_splice($result, ++$i),true));
         exit(implode(PHP_EOL, array_splice($result, ++$i)));
-    else {
+    }else {
         // ... or send the header (do not overwrite if already sent)
         $tmp = explode(':', $value);
         header($value, !isset($sent[strtolower($tmp[0])]));
