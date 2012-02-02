@@ -143,6 +143,7 @@ for($i = 0, $length = count($result), $sent = array(); $i < $length; ++$i){
         // send the output
         echo $result[$i+1];
         ob_end_flush();
+        exit;
     }else {
         // ... or send the header (do not overwrite if already sent)
         $tmp = explode(':', $value);
