@@ -137,7 +137,7 @@ for($i = 0, $length = count($result), $sent = array(); $i < $length; ++$i){
     // if all headers has been sent ...
     if($value === ''){
         // send the output
-        logline(print_r(array_splice($result, ++$i),true));
+        logline(print_r(array_splice($result, $i+1),true));
         exit(implode(PHP_EOL, array_splice($result, ++$i)));
     }else {
         // ... or send the header (do not overwrite if already sent)
