@@ -162,7 +162,6 @@ define(CACHE_DIR,'.cache');
  * checks or creates the cache dir 
  */
 function prepare_cache(){
-  logline(CACHE_DIR);  
   return is_writable(CACHE_DIR) || mkdir(CACHE_DIR,0777,true);
 }
 
@@ -203,7 +202,7 @@ function cachefile_write($url, $content){
     return false;
   }
 
-  return file_get_contents( get_cachefile_name($url), $content);
+  return file_put_contents( get_cachefile_name($url), $content);
 }
 
 function logline($message=null){
