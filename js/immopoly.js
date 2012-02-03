@@ -110,7 +110,7 @@
   			//load static files instead of connecting to the live server
   			url = "/"+callType+".json";
   		}else{
-  			url = "ajaxproxy.php?url=http://immopoly.appspot.com/user/"+callType+"?start="+startVal+"&end="+endVal;
+  			url = "ajaxproxy.php?url="+escape("http://immopoly.appspot.com/user/"+callType+"?start="+startVal+"&end="+endVal");
   		}
   		
   		//alert("Loading data from '"+url+"'");
