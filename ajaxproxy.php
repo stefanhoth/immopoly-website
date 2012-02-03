@@ -23,6 +23,7 @@
 // 
 // About: Release History
 // 
+// 1.8 - (2/03/2012) Add optional caching of proxied results by Stefan Hoth <sh@jnamic.com>
 // 1.7 - (2/03/2012) Add optional whitelist-check by Stefan Hoth <sh@jnamic.com>
 // 1.6 - (1/24/2009) Now defaults to JSON mode, which can now be changed to
 //       native mode by specifying ?mode=native. Native and JSONP modes are
@@ -145,7 +146,69 @@ $valid_url_regex = '/.*/';
  */
 $WHITELIST_DOMAINS = array('immopoly.appspot.com');
 
+/**
+ * CACHING
+ */
+$enable_caching = true;
+//how long after a cache will be renewed
+$caching_ttl_secs = 1800; //30 mins
+$caching_dir = '.'.DIRECTORY_SEPARATOR.'cache';
+
 // ############################################################################
+//  FUNCTIONS
+// ############################################################################
+
+/**
+ * checks or creates the cache dir 
+ */
+function prepare_cache(){
+  
+  return is_writable($caching_dir) || mkdir($caching_dir,0777,true);
+}
+
+/**
+ * generates a cachefile name for a given url
+ */
+function get_cachefile_name($url){
+  return $caching_dir.DIRECTORY_SEPARATOR.sha1($url);
+}
+
+/**
+ * checks if a cache file exists for a given url
+ */
+function cachefile_exits($url){
+
+  if(! prepare_cache()){
+    return false;
+  }
+
+  return is_readable(  get_cachefile_name($url) );
+}
+
+/**
+ * checks if a cache file exists for a given url
+ */
+function cachefile_read($url){
+
+  if(! prepare_cache()){
+    return false;
+  }
+
+  return file_get_contents( get_cachefile_name($url) );
+}
+
+function cachefile_write($url, $content){
+
+  if(! prepare_cache()){
+    return false;
+  }
+
+  return file_get_contents( get_cachefile_name($url), $content);
+}
+
+
+// ############################################################################
+
 
 $url = $_GET['url'];
 
@@ -168,38 +231,54 @@ if ( !$url ) {
   $status = array( 'http_code' => 'ERROR' );
   
 } else {
-  $ch = curl_init( $url );
-  
-  if ( strtolower($_SERVER['REQUEST_METHOD']) == 'post' ) {
-    curl_setopt( $ch, CURLOPT_POST, true );
-    curl_setopt( $ch, CURLOPT_POSTFIELDS, $_POST );
-  }
-  
-  if ( $_GET['send_cookies'] ) {
-    $cookie = array();
-    foreach ( $_COOKIE as $key => $value ) {
-      $cookie[] = $key . '=' . $value;
-    }
-    if ( $_GET['send_session'] ) {
-      $cookie[] = SID;
-    }
-    $cookie = implode( '; ', $cookie );
+
+  if($enable_caching && cachefile_exits($url)){
     
-    curl_setopt( $ch, CURLOPT_COOKIE, $cookie );
+    $header = '';
+    $contents = cachefile_read($url);  
+
+  }else{
+    
+    $ch = curl_init( $url );
+    
+    if ( strtolower($_SERVER['REQUEST_METHOD']) == 'post' ) {
+      curl_setopt( $ch, CURLOPT_POST, true );
+      curl_setopt( $ch, CURLOPT_POSTFIELDS, $_POST );
+    }
+    
+    if ( $_GET['send_cookies'] ) {
+      $cookie = array();
+      foreach ( $_COOKIE as $key => $value ) {
+        $cookie[] = $key . '=' . $value;
+      }
+      if ( $_GET['send_session'] ) {
+        $cookie[] = SID;
+      }
+      $cookie = implode( '; ', $cookie );
+      
+      curl_setopt( $ch, CURLOPT_COOKIE, $cookie );
+    }
+    
+    curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, true );
+    curl_setopt( $ch, CURLOPT_HEADER, true );
+    curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
+    
+    curl_setopt( $ch, CURLOPT_USERAGENT, $_GET['user_agent'] ? $_GET['user_agent'] : $_SERVER['HTTP_USER_AGENT'] );
+    
+    list( $header, $contents ) = preg_split( '/([\r\n][\r\n])\\1/', curl_exec( $ch ), 2 );
+    
+    $status = curl_getinfo( $ch );
+    
+    curl_close( $ch );    
+
+    if($enable_caching){
+      cachefile_write($url,$contents);  
+    }
+    
   }
-  
-  curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, true );
-  curl_setopt( $ch, CURLOPT_HEADER, true );
-  curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
-  
-  curl_setopt( $ch, CURLOPT_USERAGENT, $_GET['user_agent'] ? $_GET['user_agent'] : $_SERVER['HTTP_USER_AGENT'] );
-  
-  list( $header, $contents ) = preg_split( '/([\r\n][\r\n])\\1/', curl_exec( $ch ), 2 );
-  
-  $status = curl_getinfo( $ch );
-  
-  curl_close( $ch );
+
 }
+
 
 // Split header text into an array.
 $header_text = preg_split( '/[\r\n]+/', $header );
