@@ -96,6 +96,11 @@ a:hover{
 	color: #333333;
 }
 
+	a.none:hover{
+		background: transparent;
+		color: #000000;
+	}
+
 a.back2top{
 	font-size: 0.8em;
 	display: block;
