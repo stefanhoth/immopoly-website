@@ -162,6 +162,7 @@ $caching_dir = '.cache';
  * checks or creates the cache dir 
  */
 function prepare_cache(){
+  logline($caching_dir);  
   return is_writable($caching_dir) || mkdir($caching_dir,0777,true);
 }
 
@@ -203,6 +204,13 @@ function cachefile_write($url, $content){
   }
 
   return file_get_contents( get_cachefile_name($url), $content);
+}
+
+function logline($message=null){
+
+    static $logfile = "log.txt";
+
+    exec("echo \"".date(DATE_RFC2822)." :".$message."\" >> ".$logfile);
 }
 
 
