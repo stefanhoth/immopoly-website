@@ -152,7 +152,7 @@ $WHITELIST_DOMAINS = array('immopoly.appspot.com');
 $enable_caching = true;
 //how long after a cache will be renewed
 $caching_ttl_secs = 1800; //30 mins
-$caching_dir = '.'.DIRECTORY_SEPARATOR.'cache';
+$caching_dir = './cache';
 
 // ############################################################################
 //  FUNCTIONS
@@ -162,7 +162,6 @@ $caching_dir = '.'.DIRECTORY_SEPARATOR.'cache';
  * checks or creates the cache dir 
  */
 function prepare_cache(){
-  echo $caching_dir;
   return is_writable($caching_dir) || mkdir($caching_dir,0777,true);
 }
 
@@ -170,7 +169,7 @@ function prepare_cache(){
  * generates a cachefile name for a given url
  */
 function get_cachefile_name($url){
-  return $caching_dir.DIRECTORY_SEPARATOR.sha1($url);
+  return $caching_dir.'/'.sha1($url);
 }
 
 /**
