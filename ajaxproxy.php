@@ -151,7 +151,7 @@ $WHITELIST_DOMAINS = array('immopoly.appspot.com');
  */
 $enable_caching = true;
 //how long after a cache will be renewed
-define(CACHE_TTL,1800);//30 mins
+define(CACHE_TTL,600);//10 mins
 define(CACHE_DIR,'.cache');
 
 // ############################################################################
@@ -173,7 +173,7 @@ function get_cachefile_name($url){
 }
 
 /**
- * checks if a cache file exists for a given url
+ * checks if a cache file exists and is not expired for a given url
  */
 function cachefile_exits($url){
 
@@ -181,7 +181,14 @@ function cachefile_exits($url){
     return false;
   }
 
-  return is_readable(  get_cachefile_name($url) );
+  return is_readable(  get_cachefile_name($url) ) && ! cachefile_is_too_old($url);
+}
+
+/**
+ * returns if the modification time is older than the cache-time
+ */
+function cachefile_is_too_old($url){
+    return ( time() - filemtime( get_cachefile_name($url) )) >= CACHE_TTL;
 }
 
 /**
