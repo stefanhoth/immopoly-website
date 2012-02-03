@@ -147,7 +147,7 @@ for($i = 0, $length = count($result), $sent = array(); $i < $length; ++$i){
     }else {
         // ... or send the header (do not overwrite if already sent)
         $tmp = explode(':', $value);
-        header($value, !isset($sent[strtolower($tmp[0])]));
+        //header($value, !isset($sent[strtolower($tmp[0])]));
     }
 }
 
