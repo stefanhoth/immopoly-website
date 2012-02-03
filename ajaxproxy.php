@@ -162,7 +162,7 @@ $caching_dir = '.'.DIRECTORY_SEPARATOR.'cache';
  * checks or creates the cache dir 
  */
 function prepare_cache(){
-  
+  echo $caching_dir;
   return is_writable($caching_dir) || mkdir($caching_dir,0777,true);
 }
 
