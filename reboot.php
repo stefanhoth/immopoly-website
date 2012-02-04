@@ -106,7 +106,7 @@
       <hr>
 
       <footer>
-        <p>&copy; Krautsourcing UG 2011-2012 &bull; Immopoly Team <a class="pull-right" href="impressum.html">Impressum</a></p>
+        <p>&copy; Krautsourcing UG 2011-2012 &bull; Immopoly Team <a class="pull-right" href="imprint.html">Impressum</a></p>
       </footer>
 
     </div> <!-- /container -->
