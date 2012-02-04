@@ -1,4 +1,5 @@
 <?php
+
   setlocale(LC_ALL, 'de_DE');
   header("Content-Type: text/html; charset=utf-8");
   
