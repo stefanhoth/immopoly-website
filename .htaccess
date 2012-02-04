@@ -2,4 +2,5 @@
 
 RewriteEngine  on
 RewriteBase  /
+RewriteCond %{REQUEST_FILENAME} ! ^index\.html$
 RewriteRule ^(.+)\.html$ reboot.php?page=$1 [L]
