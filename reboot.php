@@ -62,9 +62,14 @@
                   <i class="icon-home icon-white"></i>&nbsp;Home
                 </a>
               </li>
+              <li class="description">
+                <a href="description.html">
+                  <i class="icon-info-sign icon-white"></i>&nbsp;Beschreibung
+                </a>
+              </li>
               <li class="screenshots">
                 <a href="screenshots.html">
-                  <i class="icon-picture icon-white"></i>&nbsp;Screenshots&nbsp;+&nbsp;Beschreibung
+                  <i class="icon-picture icon-white"></i>&nbsp;Screenshots
                 </a>
               </li>
               <li class="download">
@@ -110,8 +115,15 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery-1.7.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
-    <!--
+
+    <?php if ($page == "screenshots"): ?>
     <script src="bootstrap/js/bootstrap-transition.js"></script>
+    <script src="bootstrap/js/bootstrap-carousel.js"></script>
+    <script>
+      $('.carousel').carousel();
+    </script>
+    <?php endif; ?>
+    <!--
     <script src="bootstrap/js/bootstrap-alert.js"></script>
     <script src="bootstrap/js/bootstrap-modal.js"></script>
     <script src="bootstrap/js/bootstrap-dropdown.js"></script>
@@ -121,7 +133,6 @@
     <script src="bootstrap/js/bootstrap-popover.js"></script>
     <script src="bootstrap/js/bootstrap-button.js"></script>
     <script src="bootstrap/js/bootstrap-collapse.js"></script>
-    <script src="bootstrap/js/bootstrap-carousel.js"></script>
     <script src="bootstrap/js/bootstrap-typeahead.js"></script>
     -->
     <script>

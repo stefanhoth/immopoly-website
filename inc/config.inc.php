@@ -12,7 +12,8 @@
 		"home" => "Home",
  		"contact" => "Kontakt",
  		"imprint" => "Impressum",
- 		"description" => "Screenshots&nbsp;&amp;&nbsp;Beschreibung",
+ 		"description" => "Beschreibung",
+ 		"screenshots" => "Screenshots",
  		"download" => "Download"
  	);
 

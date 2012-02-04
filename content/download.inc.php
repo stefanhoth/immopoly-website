@@ -35,14 +35,14 @@
         
       <h4>ALPHA version</h4> 
       <p class="alert alert-error"><strong>Achtung!</strong> Diese Version ist top-aktuell und beinhaltet damit die neuesten Funktionen und Layouts. Da sie aber noch nicht ausreichend getestet ist, kann es zu Abstürzen oder anderen Fehlfunktionen kommen. Wenn Du Fehler findest, hilfst Du uns sehr, wenn Du diese meldest.</p>
-      <a href="http://www.immopoly.org/apk/immopoly-android-1.0.0-SNAPSHOT.apk">http://www.immopoly.org/apk/immopoly-android-1.0.0-SNAPSHOT.apk</a>
+      <a href="http://www.immopoly.org/apk/immopoly-android-1.0.0-SNAPSHOT.apk" class="btn btn-danger">Download der ALPHA-Version &raquo;</a>
       </p>
 
 
   </div>
 </div>
 <div>
-  <h2>Bugs, Featurewünschen, Hinweise</h2>
+  <h2>Fehler, Featurewünsche, Hinweise</h2>
   <p>Immopoly wird als Open-Source-Projekt entwickelt. Das bedeutet, dass viele Freiwillige ihre Zeit und Ideen in das Projekt einfließen lassen und es damit stetig besser wird. Durch die Quelloffenheit, kann sich jeder mit Programmierkenntnissen leicht ein Bild von der Arbeitsweise unserer Software machen.</p>
   <p>Wir verwalten Ideen und Fehler in einem sog. Bug-Tracker, der uns hilft, den Überblick zu erhalten. Du würdest uns sehr helfen, wenn Du Deine Fehlerberichte und Funktionswünsche dort eintragen würdest.</p>
   <p><a class="btn btn-primary" href="https://github.com/immopoly/immopoly/issues">Zum Issue-Tracker &raquo;</a></p>

@@ -2,7 +2,7 @@
       <div class="hero-unit">
         <h1>Immopoly</h1>
         <p>Ein mobiles Makler-Spiel mit Echtdaten von ImmobilienScout24</p>
-        <p><a class="btn btn-primary btn-large">Jetzt herunterladen &raquo;</a></p>
+        <p><a class="btn btn-primary btn-large" href="download.html">Jetzt herunterladen &raquo;</a></p>
       </div>
 
       <!-- Example row of columns -->
@@ -15,7 +15,7 @@
           <p>
            Übernimmst du eine Wohnung, bezahlst du so lange virtuell die Miete, bis sie wirklich vermietet wurde. Dann erhältst du die Provision dafür.
            </p>
-          <p><a class="btn" href="#">Screenshots ansehen &raquo;</a></p>
+          <p><a class="btn" href="description.html">Beschreibung ansehen &raquo;</a></p>
         </div>
         <div class="span4">
           <h2>iPhone, iPad &amp; Android</h2>
