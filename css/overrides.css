@@ -21,3 +21,8 @@
 .carousel-control{
 	top: 50%;
 }
+
+img.desc-icon{
+	float:right; 
+	margin: 0 0 5px 10px;
+}

@@ -3,6 +3,7 @@
 <div class="row">
 	<div class="span3 well">
 		<h2>Makler</h2>
+		<img src="img/layout/makler.png" alt="Makler" class="desc-icon"/>
 		<p>
 			Deine Spielfigur ist ein Makler, der mit <strong>Wohnungen aus Deiner aktuellen Umgebung</strong> Geld verdienen will. Du verdienst Geld, in dem Wohnungen aus Deinem Portfolio vermietet werden.
 		</p>
@@ -12,6 +13,7 @@
 	</div>
 	<div class="span3 well">
 		<h2>Wohnung</h2>
+		<img src="img/layout/wohnung.png" alt="Wohnung" class="desc-icon"/>
 		<p>
 			Die Wohnungen, welche Dir auf der Karte anzeigt werden, sind <strong>echte Wohnungen vom Immobilienportal "ImmobilienScout24"</strong>. Deine Aufgabe ist es, aus den zur Auswahl stehenden Wohnungen diese herauszupicken, die <strong>möglichst schnell vermietet</strong> sind.
 		</p>
@@ -21,6 +23,7 @@
 	</div>
 	<div class="span3 well">
 		<h2>Portfolio</h2>
+		<img src="img/layout/portfolio.png" alt="Portfolio" class="desc-icon"/>
 		<p>
 			Jede Wohnung für die Du den Vermietungsauftrag übernimmst, landet in Deinem Portfolio, welches Du Dir jederzeit ansehen kannst - <strong>egal wo Du gerade bist</strong>.
 		</p>
@@ -31,6 +34,7 @@
 <div class="row">
 	<div class="span3 well">
 		<h2>Tagesabrechnung</h2>
+		<img src="img/layout/tagesabrechnung.png" alt="Tagesabrechnung" class="desc-icon"/>
 		<p>
 			Für jeder der sich in Deinem Portfolio befindlichen Wohnungen <strong>zahlst Du tagesanteilig die Nettokaltmiete</strong> gemäß Exposé.
 		</p>
@@ -40,6 +44,7 @@
 	</div>
 	<div class="span3 well">
 		<h2>Bestenliste</h2>
+		<img src="img/layout/bestenliste.png" alt="Bestenliste" class="desc-icon"/>
 		<p>
 			Wie in jedem Spiel gibt es auch hier Konkurrenz. Die Top-Liste zeigt Dir jederzeit, auf <strong>welchem Platz der globalen Rangfolge</strong> Du Dich gerade befindest. Mit dem richtigen Gespür kannst Du die Leiter emporklimmen.
 		</p>
@@ -49,12 +54,14 @@
 	</div>
 	<div class="span3 well">
 		<h2>Spezialaktionen</h2>
-		<p class="alert alert-info">
-			<em>Wir arbeiten daran...</em>
-		</p>
+		<img src="img/layout/spezialaktionen.png" alt="Spezialaktionen" class="desc-icon"/>
 		<p>
 			Neben dem cleveren Management des Portfolios wird es bald Möglichkeiten geben, sich anders Vorteile im Spiel zu schaffen. Sei es durch Verbesserung des eigenen Charakters oder durch die Sabotage anderer Mitspieler. Mehr Details gibt es beim Release.
 		</p>
+		<p class="alert alert-info">
+			<em>Wir arbeiten daran...</em>
+		</p>
 	</div>
 </div>
+<h3>Und so sieht das ganze in Action aus...</h3>
 <p><a class="btn btn-primary" href="screenshots.html">Screenshots ansehen &raquo;</a></p>
