@@ -1,0 +1,10 @@
+.hero-unit{
+	background-image: url(../img/berlin-skyline-stripe.jpg);
+	background-position: center;
+	height: 350px;
+}
+
+.navbar-inner .form-inline{
+	padding-top: 5px;
+	margin: 0;	
+}
