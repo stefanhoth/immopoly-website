@@ -3,4 +3,5 @@ RewriteEngine on
 RewriteBase  /
 RewriteCond %{REQUEST_FILENAME} !^index\.html$
 RewriteCond %{REQUEST_FILENAME} !^pullfromgithubparanoidschnickschnackftw\.php$
-RewriteRule ^(.+)\.html$ reboot.php?page=$1 [R,L]
+RewriteCond %{REQUEST_FILENAME} !^ajaxproxy\.php$
+RewriteRule ^(.+)\.html$ reboot.php?page=$1 [L]
