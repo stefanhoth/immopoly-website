@@ -1,0 +1,6 @@
+
+RewriteEngine on
+RewriteBase  /
+RewriteCond %{REQUEST_FILENAME} !^pullfromgithubparanoidschnickschnackftw\.php$
+RewriteCond %{REQUEST_FILENAME} !^ajaxproxy\.php$
+RewriteRule ^(.+)\.html$ index.php?page=$1 [L]

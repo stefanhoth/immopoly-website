@@ -1,0 +1,51 @@
+.hero-unit{
+	background-image: url(../img/layout/berlin-skyline-stripe.jpg);
+	background-position: center;
+	height: 350px;
+}
+
+.navbar-inner .form-inline{
+	padding-top: 5px;
+	margin: 0;	
+}
+
+.carousel{
+	width: 300px;
+	min-height: 500px;
+	background: url("../img/layout/ajax-spinner.gif") center center no-repeat;
+}
+
+	.carousel .item img{
+		width: 100%;
+	}
+
+.carousel-control{
+	top: 50%;
+}
+
+img.desc-icon{
+	float:right; 
+	margin: 0 0 5px 10px;
+}
+
+.span6 table{
+	width: 100%;
+}
+
+tr.loading{
+	text-align: center;
+}
+
+	tr.loading td{
+		padding: 20px;
+	}
+
+
+.table-striped tbody tr:nth-child(odd) td, 
+.table-striped tbody tr:nth-child(odd) th {
+	background-color: #bcd5ff;
+}
+
+table#top_list td{
+	text-align: center;
+}

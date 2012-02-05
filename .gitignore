@@ -1,3 +1,5 @@
-*.class
-*.pyc
-*.pyo
+top.json
+history.json
+
+bootstrap/js/*.js
+bootstrap/css/*.css
