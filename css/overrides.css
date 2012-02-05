@@ -39,3 +39,13 @@ tr.loading{
 	tr.loading td{
 		padding: 20px;
 	}
+
+
+.table-striped tbody tr:nth-child(odd) td, 
+.table-striped tbody tr:nth-child(odd) th {
+	background-color: #bcd5ff;
+}
+
+table#top_list td{
+	text-align: center;
+}

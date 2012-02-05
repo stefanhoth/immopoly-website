@@ -6,7 +6,7 @@
 <div class="row">
 	<div class="span6">
 		<h2>Die monatlichen Top-Makler</h2>
-		<table id="top_list" class="table-striped"> 
+		<table id="top_list" class="table-striped table-bordered table-condensed"> 
 			 <colgroup>
 					 <col class="rank"></col>
 					 <col class="name"></col>
@@ -34,7 +34,7 @@
 	<div class="span6">
 		<h2>Die letzten Aktionen im Spiel (Gesamthistorie)</h2>
 
-		 <table id="history_list"  class="table-striped history"> 
+		 <table id="history_list"  class="table-striped history table-bordered table-condensed"> 
 				 <colgroup>
 						 <col class="name"></col>
 						 <col class="date"></col>
