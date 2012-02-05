@@ -52,11 +52,13 @@
 
   			//test data before disable the loader
   			$(jsonData).each(function(intIndex){
-  				entry = objectToArrayVar(callType, jsonData[intIndex], intIndex);
+
+  				entry = objectToArrayVar(callType, jsonData[intIndex], startVal+intIndex);
   				
   				if(entry == null){
   					runtimeError = true;
   				}
+
   				return;  				
   			});
   			
@@ -81,12 +83,23 @@
   				logger(row);
   				$("#"+ callType +"_list tbody").append(row);
   			});
-  			
+ 			
   			//do nothing more on parse errors
   			if(runtimeError){
   				return;
   			}
-  			
+
+        //reassign rank numbers
+        if(callType == "top"){
+          
+          var rank = 1;
+
+          $("#"+ callType +"_list tr td:first-child").each(function(){
+            $(this).html(rank++);            
+          });
+
+        }
+
   		});
   		
   	}
@@ -107,7 +120,7 @@
 			
 			user = jsonData["org.immopoly.common.User"];
 			
-			entryData.push( intIndex+1 ); //Rank is index+1
+			entryData.push( "" );
 			entryData.push( user.username );
 			entryData.push( formatMoney(user.info.balance) );
 			entryData.push( formatMoney(user.info.balanceMonth) );
