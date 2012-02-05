@@ -1,4 +1,0 @@
-
-RewriteEngine on
-RewriteBase  /
-RewriteRule ^(.+)\.html$ reboot.php?page=$1 [R,L]
