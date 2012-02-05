@@ -85,7 +85,7 @@
               </li>
               <li class="livestats">
                 <a href="livestats.html">
-                  <i class="icon-list-alt icon-white"></i>&nbsp;Live-Status
+                  <i class="icon-list-alt icon-white"></i>&nbsp;Live-Statistiken
                 </a>
               </li>
             </ul>

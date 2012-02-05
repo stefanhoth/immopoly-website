@@ -52,11 +52,13 @@
 
   			//test data before disable the loader
   			$(jsonData).each(function(intIndex){
-  				entry = objectToArrayVar(callType, jsonData[intIndex], intIndex);
+
+  				entry = objectToArrayVar(callType, jsonData[intIndex], startVal+intIndex);
   				
   				if(entry == null){
   					runtimeError = true;
   				}
+
   				return;  				
   			});
   			
@@ -81,26 +83,26 @@
   				logger(row);
   				$("#"+ callType +"_list tbody").append(row);
   			});
-  			
+ 			
   			//do nothing more on parse errors
   			if(runtimeError){
   				return;
   			}
 
+        //reassign rank numbers
+        if(callType == "top"){
+          
+          var rank = 1;
 
-        if(callType == "history"){
-          $('#history_list td a').each(function(){
-              $this = $(this);
-
-              if($this.hasClass("btn-small")){
-                return;
-              }
-              $this.addClass("btn btn-small pull-right");
-              $this.html("Exposé öffnen &raquo;");
+          $("#"+ callType +"_list tr td:first-child").each(function(){
+            $(this).html(rank++);            
           });
-        }               
 
-  			
+          $("#"+ callType +"_list tr td:nth-child(3)").addClass("right");
+          $("#"+ callType +"_list tr td:nth-child(4)").addClass("right");
+
+        }
+
   		});
   		
   	}
@@ -121,7 +123,7 @@
 			
 			user = jsonData["org.immopoly.common.User"];
 			
-			entryData.push( intIndex+1 ); //Rank is index+1
+			entryData.push( "" );
 			entryData.push( user.username );
 			entryData.push( formatMoney(user.info.balance) );
 			entryData.push( formatMoney(user.info.balanceMonth) );
@@ -130,8 +132,7 @@
 		case "history":
 			history = jsonData["org.immopoly.common.History"];
 			
-			date = new Date(history.time);
-			dateString =  date.getDate() + "." + pad((date.getMonth() + 1),2) + "." + date.getFullYear() + "&nbsp;" + date.getHours() + ":" + pad(date.getMinutes(),2);
+			dateString = new Date(history.time).toRelativeTime();
 			
 			logger(history);
 			logger(history.username);
@@ -143,8 +144,8 @@
 			entryData.push(history.username);
 			entryData.push(dateString);
 			text = history.text;
-			if(history.exposeId)
-				text=text+" <a href='http://www.immobilienscout24.de/expose/"+history.exposeId+"' target='_new'>Expose "+history.exposeId+"</a>"
+			if(history.exposeId && history.type != 2)
+				text=text+" <a class='btn btn-small pull-right' href='http://www.immobilienscout24.de/expose/"+history.exposeId+"' target='_new'>Exposé öffnen &raquo;</a>"
 			entryData.push(text);
 
 			break;
@@ -174,19 +175,44 @@
   	 * formats the given field as currency value
   	 * @param number number to format
   	 * @param currency string for currency to attach
+     * @param German format? Defaults to true
   	 * @returns formatted value
   	 */
-  	function formatMoney(number,currency){
+  	function formatMoney(number, currency, isGerman){
   		
-  		if(typeof currency == "undefined"){
-  			currency = "Eur";
+      if(typeof currency == "undefined"){
+        currency = "Eur";
+      }
+
+  		if(typeof isGerman == "undefined"){
+  			isGerman = true;
   		}
   		
   		if(isNaN(parseFloat(number))){
   			return number;
   		}
 
-  		return parseFloat(number).toFixed(2)+ " " + currency;
+
+      number = parseFloat(number).toFixed(2);
+
+      if(! isGerman){
+        return number + " " + currency;
+      }
+
+      var numberString = ""+number; // make it a String
+      numberString = numberString.replace(".",",");
+
+      var s = 0;
+      if( numberString.indexOf("-") > -1 ){
+        s=1; // negative ?
+      } 
+
+      for( i = numberString.length-6; i > s; i-=3 ){ //Start at index 3 (+3 for decimal and comma) from the end, decrement 3 each loop
+      
+        numberString = numberString.substring( 0, i ) + "." + numberString.substring( i ); // insert dots
+      }
+
+  		return numberString + " " + currency;
   	}
   	  	
   	/**
@@ -253,3 +279,80 @@
       } 
     ); 
     
+
+
+
+/**
+ * Returns a description of this past date in relative terms.
+ * Takes an optional parameter (default: 0) setting the threshold in ms which
+ * is considered "Just now".
+ *
+ * Examples, where new Date().toString() == "Mon Nov 23 2009 17:36:51 GMT-0500 (EST)":
+ *
+ * new Date().toRelativeTime()
+ * --> 'Just now'
+ *
+ * new Date("Nov 21, 2009").toRelativeTime()
+ * --> '2 days ago'
+ *
+ * // One second ago
+ * new Date("Nov 23 2009 17:36:50 GMT-0500 (EST)").toRelativeTime()
+ * --> '1 second ago'
+ *
+ * // One second ago, now setting a now_threshold to 5 seconds
+ * new Date("Nov 23 2009 17:36:50 GMT-0500 (EST)").toRelativeTime(5000)
+ * --> 'Just now'
+ *
+ */
+Date.prototype.toRelativeTime = function(now_threshold) {
+  var delta = new Date() - this;
+
+  now_threshold = parseInt(now_threshold, 10);
+
+  if (isNaN(now_threshold)) {
+    now_threshold = 0;
+  }
+
+  if (delta <= now_threshold) {
+    return 'Gerade jetzt';
+  }
+
+  var units = null;
+  var conversions = {
+    Millisekunde: 1, // ms    -> ms
+    Sekunde: 1000,   // ms    -> sec
+    Minute: 60,     // sec   -> min
+    Stunde:   60,     // min   -> hour
+    Tag:    24,     // hour  -> day
+    Monat:  30,     // day   -> month (roughly)
+    Jahr:   12      // month -> year
+  };
+
+  for (var key in conversions) {
+    if (delta < conversions[key]) {
+      break;
+    } else {
+      units = key; // keeps track of the selected key over the iteration
+      delta = delta / conversions[key];
+    }
+  }
+
+  // pluralize a unit when the difference is greater than 1.
+  delta = Math.floor(delta);
+  if (delta !== 1) { 
+    if(units.charAt(units.length-1) == "e"){
+      units += "n";  
+    }else{
+      units += "en";
+    }
+  }
+  return ["vor",delta, units].join(" ");
+};
+
+/*
+ * Wraps up a common pattern used with this plugin whereby you take a String
+ * representation of a Date, and want back a date object.
+ */
+Date.fromString = function(str) {
+  return new Date(Date.parse(str));
+};

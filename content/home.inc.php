@@ -2,7 +2,16 @@
       <div class="hero-unit">
         <h1>Immopoly</h1>
         <p>Ein mobiles Makler-Spiel mit Echtdaten von ImmobilienScout24</p>
-        <p><a class="btn btn-primary btn-large" href="download.html">Jetzt herunterladen &raquo;</a></p>
+        <p>
+          <a class="btn btn-large btn-primary" href="download.html">
+            <i class="icon-download icon-white"></i>
+            Jetzt herunterladen &raquo;
+          </a>
+          <a class="btn btn-large btn-success" href="livestats.html">
+            <i class="icon-list-alt icon-white"></i>
+            Live-Statistiken &raquo;
+          </a>
+        </p>
       </div>
 
       <!-- Example row of columns -->
