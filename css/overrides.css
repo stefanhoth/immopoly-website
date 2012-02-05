@@ -4,6 +4,15 @@
 	height: 350px;
 }
 
+	.hero-unit .btn{
+		margin: 5px;
+	}
+
+	.hero-unit i.icon-white{
+		margin-top: 2px;
+	}
+
+
 .navbar-inner .form-inline{
 	padding-top: 5px;
 	margin: 0;	
