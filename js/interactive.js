@@ -98,6 +98,9 @@
             $(this).html(rank++);            
           });
 
+          $("#"+ callType +"_list tr td:nth-child(3)").addClass("right");
+          $("#"+ callType +"_list tr td:nth-child(4)").addClass("right");
+
         }
 
   		});
@@ -172,19 +175,44 @@
   	 * formats the given field as currency value
   	 * @param number number to format
   	 * @param currency string for currency to attach
+     * @param German format? Defaults to true
   	 * @returns formatted value
   	 */
-  	function formatMoney(number,currency){
+  	function formatMoney(number, currency, isGerman){
   		
-  		if(typeof currency == "undefined"){
-  			currency = "Eur";
+      if(typeof currency == "undefined"){
+        currency = "Eur";
+      }
+
+  		if(typeof isGerman == "undefined"){
+  			isGerman = true;
   		}
   		
   		if(isNaN(parseFloat(number))){
   			return number;
   		}
 
-  		return parseFloat(number).toFixed(2)+ " " + currency;
+
+      number = parseFloat(number).toFixed(2);
+
+      if(! isGerman){
+        return number + " " + currency;
+      }
+
+      var numberString = ""+number; // make it a String
+      numberString = numberString.replace(".",",");
+
+      var s = 0;
+      if( numberString.indexOf("-") > -1 ){
+        s=1; // negative ?
+      } 
+
+      for( i = numberString.length-6; i > s; i-=3 ){ //Start at index 3 (+3 for decimal and comma) from the end, decrement 3 each loop
+      
+        numberString = numberString.substring( 0, i ) + "." + numberString.substring( i ); // insert dots
+      }
+
+  		return numberString + " " + currency;
   	}
   	  	
   	/**

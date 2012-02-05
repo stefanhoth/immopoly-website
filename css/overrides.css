@@ -58,3 +58,8 @@ tr.loading{
 table#top_list td{
 	text-align: center;
 }
+
+	table#top_list td.right{
+		text-align: right;
+		padding-right: 15px;
+	}
