@@ -64,7 +64,7 @@
           <div class="nav-collapse">
             <ul class="nav">
               <li class="home">
-                <a href="reboot.html">
+                <a href="/">
                   <i class="icon-home icon-white"></i>&nbsp;Home
                 </a>
               </li>
