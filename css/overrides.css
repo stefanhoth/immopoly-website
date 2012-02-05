@@ -27,3 +27,15 @@ img.desc-icon{
 	float:right; 
 	margin: 0 0 5px 10px;
 }
+
+.span6 table{
+	width: 100%;
+}
+
+tr.loading{
+	text-align: center;
+}
+
+	tr.loading td{
+		padding: 20px;
+	}

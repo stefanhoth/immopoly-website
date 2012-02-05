@@ -14,7 +14,8 @@
  		"imprint" => "Impressum",
  		"description" => "Beschreibung",
  		"screenshots" => "Screenshots",
- 		"download" => "Download"
+ 		"download" => "Download",
+ 		"livestats" => "Live-Status"
  	);
 
 ?>

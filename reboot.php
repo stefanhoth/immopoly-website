@@ -118,12 +118,15 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
 
     <?php if ($page == "screenshots"): ?>
-    <script src="bootstrap/js/bootstrap-transition.js"></script>
-    <script src="bootstrap/js/bootstrap-carousel.js"></script>
-    <script>
-      $('.carousel').carousel();
-    </script>
+      <script src="bootstrap/js/bootstrap-transition.js"></script>
+      <script src="bootstrap/js/bootstrap-carousel.js"></script>
+      <script>
+        $('.carousel').carousel();
+      </script>
+    <?php elseif ($page == "livestats"): ?>
+      <script src="js/interactive.js"></script>
     <?php endif; ?>
+
     <!--
     <script src="bootstrap/js/bootstrap-alert.js"></script>
     <script src="bootstrap/js/bootstrap-modal.js"></script>
