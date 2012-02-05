@@ -96,7 +96,7 @@
                 return;
               }
               $this.addClass("btn btn-small pull-right");
-              $this.html("Exposé öffnen &raquo;");
+              $this.html("");
           });
         }               
 
@@ -143,8 +143,8 @@
 			entryData.push(history.username);
 			entryData.push(dateString);
 			text = history.text;
-			if(history.exposeId)
-				text=text+" <a href='http://www.immobilienscout24.de/expose/"+history.exposeId+"' target='_new'>Expose "+history.exposeId+"</a>"
+			if(history.exposeId && history.type != 2)
+				text=text+" <a class='btn btn-small pull-right' href='http://www.immobilienscout24.de/expose/"+history.exposeId+"' target='_new'>Exposé öffnen &raquo;</a>"
 			entryData.push(text);
 
 			break;
