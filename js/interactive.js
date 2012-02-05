@@ -86,20 +86,6 @@
   			if(runtimeError){
   				return;
   			}
-
-
-        if(callType == "history"){
-          $('#history_list td a').each(function(){
-              $this = $(this);
-
-              if($this.hasClass("btn-small")){
-                return;
-              }
-              $this.addClass("btn btn-small pull-right");
-              $this.html("");
-          });
-        }               
-
   			
   		});
   		
