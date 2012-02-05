@@ -83,11 +83,6 @@
                   <i class="icon-list-alt icon-white"></i>&nbsp;Live-Status
                 </a>
               </li>
-              <li class="contact">
-                <a href="contact.html">
-                  <i class="icon-envelope icon-white"></i>&nbsp;Kontakt
-                </a>
-              </li>
             </ul>
           </div><!--/.nav-collapse -->
           <form class="form-inline pull-right">
@@ -106,7 +101,14 @@
       <hr>
 
       <footer>
-        <p>&copy; Krautsourcing UG 2011-2012 &bull; Immopoly Team <a class="pull-right" href="imprint.html">Impressum</a></p>
+        <p>
+          &copy; Krautsourcing UG 2011-2012 &bull; Immopoly Team 
+          <span style="display:block;" class="pull-right">
+            <a href="contact.html">Kontakt</a>
+            &nbsp;|&nbsp;
+            <a href="imprint.html">Impressum</a>
+          </span>
+        </p>
       </footer>
 
     </div> <!-- /container -->
