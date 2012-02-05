@@ -245,7 +245,7 @@ if ( !$url ) {
   
 } else {
 
-  if($_SERVER['REQUEST_METHOD']) == 'get' && $enable_caching && cachefile_exits($url)){
+  if( strtolower($_SERVER['REQUEST_METHOD']) == 'get' && $enable_caching && cachefile_exits($url)){
     
     $header = '';
     $contents = cachefile_read($url);  
@@ -284,7 +284,7 @@ if ( !$url ) {
     
     curl_close( $ch );    
 
-    if($_SERVER['REQUEST_METHOD']) == 'get' && $enable_caching){
+    if( strtolower($_SERVER['REQUEST_METHOD']) == 'get' && $enable_caching){
       cachefile_write($url,$contents);  
     }
     
