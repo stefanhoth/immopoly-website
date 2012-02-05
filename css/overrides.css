@@ -12,6 +12,7 @@
 .carousel{
 	width: 300px;
 	min-height: 500px;
+	background: url("../img/layout/ajax-spinner.gif") center center no-repeat;
 }
 
 	.carousel .item img{
