@@ -299,11 +299,6 @@
       map = new google.maps.Map(document.getElementById("heatmapArea"), myOptions);
       heatmap = new HeatmapOverlay(map, {"radius":15, "visible":true, "opacity":60});
   
-      // this is important, because if you set the data set too early, the latlng/pixel projection doesn't work
-      google.maps.event.addListenerOnce(map, "idle", function(){
-        heatmap.setDataSet(testData);
-      });
-
       //request immopoly
       $.ajax({
         url: "http://immopoly.org/ajaxproxy.php?mode=native&url"+escape("http://immopoly.appspot.com/statistic/heatmap?type=takeover"),
