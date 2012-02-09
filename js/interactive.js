@@ -10,7 +10,7 @@
     }
     
     //activates debug output
-    var debugmode = true;	
+    var debugmode = false;	
     
     /**
      * loads the data for the calltype via JSON-request and updates the given table-id with the data, if parseable
@@ -285,7 +285,7 @@
       
       var myLatlng = new google.maps.LatLng(51.522416,9.931641); //Göttingen
       var myOptions = {
-        zoom: 5,
+        zoom: 6,
         center: myLatlng,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         disableDefaultUI: false,
