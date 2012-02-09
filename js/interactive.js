@@ -201,6 +201,7 @@
   		}
 
 
+
       number = parseFloat(number).toFixed(2);
 
       if(! isGerman){
@@ -301,7 +302,7 @@
   
       //request immopoly
       $.ajax({
-        url: "http://immopoly.org/ajaxproxy.php?mode=native&url"+escape("http://immopoly.appspot.com/statistic/heatmap?type=takeover"),
+        url: "http://immopoly.org/ajaxproxy.php?mode=native&url="+escape("http://immopoly.appspot.com/statistic/heatmap?type=takeover"),
         context: document.body,
         data:{'type':'takeover'},
         dataType:"json",
