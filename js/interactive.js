@@ -281,9 +281,9 @@
 
     function initHeatmap(){
       
-      var myLatlng = new google.maps.LatLng(52, 13); //Berlin
+      var myLatlng = new google.maps.LatLng(51.522416,9.931641); //Göttingen
       var myOptions = {
-        zoom: 5,
+        zoom: 6,
         center: myLatlng,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         disableDefaultUI: false,
