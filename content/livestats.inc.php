@@ -58,6 +58,7 @@
 		 </table>
 	</div>
 </div>
+<hr/>
 <div class="row">
 	<div class="span10 offset1 center">
 		<h2>Immopoly - Deutschlandweit die neuesten 250 Wohnungen unserer Makler</h2>
