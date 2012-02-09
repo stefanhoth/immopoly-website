@@ -144,6 +144,13 @@
 			entryData.push(historyObj.username);
 			entryData.push(dateString);
 			text = historyObj.text;
+
+      //coloring actions
+      text = text.replace(/(Provision.+überwiesen.)/g,"<span class=\"btn-success btn-small\">$1</span>");
+      text = text.replace(/(Belohung.+Eur)/g,"<span class=\"btn-success btn-small\">$1</span>");
+      text = text.replace(/(Strafe.+Eur)/g,"<span class=\"btn-danger btn-small\">$1</span>");
+      text = text.replace(/(Übernahmekosten:.+Eur)/g,"<span class=\"btn-warning btn-small\">$1</span>");
+
 			if(historyObj.exposeId && historyObj.type != 2)
 				text=text+" <a class='btn btn-small pull-right' href='http://www.immobilienscout24.de/expose/"+historyObj.exposeId+"' target='_new'>Exposé öffnen &raquo;</a>"
 			entryData.push(text);
@@ -270,15 +277,59 @@
   		
   		console.log(messageObj);
   	}
+
+
+    function initHeatmap(){
+      
+      var myLatlng = new google.maps.LatLng(52, 13); //Berlin
+      var myOptions = {
+        zoom: 5,
+        center: myLatlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        disableDefaultUI: false,
+        scrollwheel: true,
+        draggable: true,
+        navigationControl: true,
+        mapTypeControl: false,
+        scaleControl: true,
+        disableDoubleClickZoom: false
+      };
+
+      map = new google.maps.Map(document.getElementById("heatmapArea"), myOptions);
+      heatmap = new HeatmapOverlay(map, {"radius":15, "visible":true, "opacity":60});
+  
+      // this is important, because if you set the data set too early, the latlng/pixel projection doesn't work
+      google.maps.event.addListenerOnce(map, "idle", function(){
+        heatmap.setDataSet(testData);
+      });
+
+      //request immopoly
+      $.ajax({
+        url: "http://immopoly.org/ajaxproxy.php?mode=native&url"+escape("http://immopoly.appspot.com/statistic/heatmap?type=takeover"),
+        context: document.body,
+        data:{'type':'takeover'},
+        dataType:"json",
+          success: function(data){
+            logger('login response '+JSON.stringify(data) );
+            heatmap.setDataSet(data);
+          },
+          error: function(){
+            logger('error initializing HeatMap');
+          }
+      });
+
+  }
+
   
   	//do on start
-    $(document).ready(function() 
-      { 
-		updateTable("#top_makler","top");
-		updateTable("#history_list","history");
-      } 
-    ); 
+    $(document).ready(function(){ 
+    		updateTable("#top_makler","top");
+    		updateTable("#history_list","history");
+    }); 
     
+
+
+
 
 
 
@@ -356,3 +407,5 @@ Date.prototype.toRelativeTime = function(now_threshold) {
 Date.fromString = function(str) {
   return new Date(Date.parse(str));
 };
+
+

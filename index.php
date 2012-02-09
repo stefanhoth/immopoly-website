@@ -135,18 +135,26 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery-1.7.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
     <?php if ($page == "screenshots"): ?>
-      <script src="bootstrap/js/bootstrap-transition.js"></script>
-      <script src="bootstrap/js/bootstrap-carousel.js"></script>
-      <script>
+      <script type="text/javascript" src="bootstrap/js/bootstrap-transition.js"></script>
+      <script type="text/javascript" src="bootstrap/js/bootstrap-carousel.js"></script>
+      <script type="text/javascript">
         $('.carousel').carousel();
       </script>
     <?php elseif ($page == "livestats"): ?>
-      <script src="js/interactive.js"></script>
-    <?php endif; ?>
+      <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+      <script type="text/javascript" src="js/heatmap.js"></script>
+      <script type="text/javascript" src="js/interactive.js"></script>
+      <script type="text/javascript">
+        //do on start
+        $(document).ready(function() {
+          initHeatmap();          
+        });
+      </script>
+      <?php endif; ?>
 
     <!--
     <script src="bootstrap/js/bootstrap-alert.js"></script>

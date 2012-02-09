@@ -58,3 +58,11 @@
 		 </table>
 	</div>
 </div>
+<div class="row">
+	<div class="span10 offset1">
+		<h2>Immopoly - weltweit</h2>
+		<div class="span10" id="heatmapArea">
+			
+		</div>
+	</div>
+</div>	
