@@ -59,7 +59,7 @@
 	</div>
 </div>
 <div class="row">
-	<div class="span10 offset1">
+	<div class="span10 offset1 center">
 		<h2>Immopoly - Deutschlandweit die neuesten 250 Wohnungen unserer Makler</h2>
 		<div class="span10" id="heatmapArea">
 			
