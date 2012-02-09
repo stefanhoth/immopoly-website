@@ -283,7 +283,7 @@
       
       var myLatlng = new google.maps.LatLng(51.522416,9.931641); //Göttingen
       var myOptions = {
-        zoom: 6,
+        zoom: 5,
         center: myLatlng,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         disableDefaultUI: false,
