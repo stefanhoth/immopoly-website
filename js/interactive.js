@@ -320,17 +320,6 @@
 
   }
 
-  
-  	//do on start
-    $(document).ready(function(){ 
-    		updateTable("#top_makler","top");
-    		updateTable("#history_list","history");
-    }); 
-    
-
-
-
-
 
 
 /**
