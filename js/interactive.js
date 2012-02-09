@@ -147,9 +147,9 @@
 
       //coloring actions
       text = text.replace(/(Provision.+überwiesen.)/,"<span class=\"btn-success btn-small\">$1</span>");
-      text = text.replace(/(Belohung:.+Eur)/,"<span class=\"btn-success btn-small\">$1</span>");
+      text = text.replace(/(Belohnung:.+Eur)/,"<span class=\"btn-success btn-small\">$1</span>");
       text = text.replace(/(Strafe.+Eur)/,"<span class=\"btn-danger btn-small\">$1</span>");
-      text = text.replace(/(Übernahmekosten:.+Eur Du)/,"<span class=\"btn-warning btn-small\">$1</span> Du");
+      text = text.replace(/(Übernahmekosten:.+Eur)/,"<span class=\"btn-warning btn-small\">$1</span>");
 
 			if(historyObj.exposeId && historyObj.type != 2)
 				text=text+" <a class='btn btn-small pull-right' href='http://www.immobilienscout24.de/expose/"+historyObj.exposeId+"' target='_new'>Exposé öffnen &raquo;</a>"
