@@ -69,4 +69,5 @@ table#top_list td{
 	width:500px;
 	height:600px;
 	border:1px dashed black;
+	margin: auto;
 }
