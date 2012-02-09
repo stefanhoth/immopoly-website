@@ -103,7 +103,7 @@
   		}
   		
   		if(typeof endVal == "undefined"){
-  			endVal  = 10;
+  			endVal  = 25;
   		}
   		
   		if(localmode){

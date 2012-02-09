@@ -34,7 +34,10 @@
        </div>
         <div class="span4">
           <h2>Folge uns</h2>
-          <p>
+	  <p>
+	  <a href="http://immopoly.blogspot.com"><img src="/img/layout/blogger.png"></a>
+	  </p>
+	<p>
             <div class="g-plus" data-href="https://plus.google.com/115948347977579800149" data-width="280" data-height="131" data-theme="light"></div>
           </p>
           <p>

@@ -50,6 +50,20 @@
     s.parentNode.insertBefore(po, s);
     })();</script>
 
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-25033820-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+
   </head>
   <body>
     <div class="navbar navbar-fixed-top">
@@ -64,7 +78,7 @@
           <div class="nav-collapse">
             <ul class="nav">
               <li class="home">
-                <a href="reboot.html">
+                <a href="/">
                   <i class="icon-home icon-white"></i>&nbsp;Home
                 </a>
               </li>
@@ -121,18 +135,28 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery-1.7.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
     <?php if ($page == "screenshots"): ?>
-      <script src="bootstrap/js/bootstrap-transition.js"></script>
-      <script src="bootstrap/js/bootstrap-carousel.js"></script>
-      <script>
+      <script type="text/javascript" src="bootstrap/js/bootstrap-transition.js"></script>
+      <script type="text/javascript" src="bootstrap/js/bootstrap-carousel.js"></script>
+      <script type="text/javascript">
         $('.carousel').carousel();
       </script>
     <?php elseif ($page == "livestats"): ?>
-      <script src="js/interactive.js"></script>
-    <?php endif; ?>
+      <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+      <script type="text/javascript" src="js/heatmap.js"></script>
+      <script type="text/javascript" src="js/interactive.js"></script>
+      <script type="text/javascript">
+        //do on start
+        $(document).ready(function() {
+          updateTable("#top_makler","top");
+          updateTable("#history_list","history");
+          initHeatmap();          
+        });
+      </script>
+      <?php endif; ?>
 
     <!--
     <script src="bootstrap/js/bootstrap-alert.js"></script>
