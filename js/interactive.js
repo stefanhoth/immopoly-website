@@ -130,22 +130,22 @@
 						
 			break;
 		case "history":
-			history = jsonData["org.immopoly.common.History"];
+			historyObj = jsonData["org.immopoly.common.History"];
 			
-			dateString = new Date(history.time).toRelativeTime();
+			dateString = new Date(historyObj.time).toRelativeTime();
 			
-			logger(history);
-			logger(history.username);
+			logger(historyObj);
+			logger(historyObj.username);
 			
-			if(typeof history == "undefined" || typeof history.username == "undefined"){
+			if(typeof historyObj == "undefined" || typeof historyObj.username == "undefined"){
 				return null;
 			}
 			
-			entryData.push(history.username);
+			entryData.push(historyObj.username);
 			entryData.push(dateString);
-			text = history.text;
-			if(history.exposeId && history.type != 2)
-				text=text+" <a class='btn btn-small pull-right' href='http://www.immobilienscout24.de/expose/"+history.exposeId+"' target='_new'>Exposé öffnen &raquo;</a>"
+			text = historyObj.text;
+			if(historyObj.exposeId && historyObj.type != 2)
+				text=text+" <a class='btn btn-small pull-right' href='http://www.immobilienscout24.de/expose/"+historyObj.exposeId+"' target='_new'>Exposé öffnen &raquo;</a>"
 			entryData.push(text);
 
 			break;
