@@ -64,6 +64,14 @@ table#top_list td{
 		padding-right: 15px;
 	}
 
+table#history_list a.btn-small{
+	margin-left: 5px;
+	margin-top: 5px;
+}
+
+table#history_list p.btn-small{
+	text-align: center;
+}
 
 #heatmapArea{
 	width:500px;
