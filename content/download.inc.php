@@ -35,7 +35,7 @@
         
       <h4>ALPHA version</h4> 
       <p class="alert alert-error"><strong>Achtung!</strong> Diese Version ist top-aktuell und beinhaltet damit die neuesten Funktionen und Layouts. Da sie aber noch nicht ausreichend getestet ist, kann es zu Abstürzen oder anderen Fehlfunktionen kommen. Wenn Du Fehler findest, hilfst Du uns sehr, wenn Du diese meldest.</p>
-      <a href="http://www.immopoly.org/apk/immopoly-android-aligned.apk" class="btn btn-danger">Download der ALPHA-Version &raquo;</a>
+      <a href="http://www.immopoly.org/apk/immopoly-android-1.0.0-aligned.apk" class="btn btn-danger">Download der ALPHA-Version &raquo;</a>
       </p>
 
 
