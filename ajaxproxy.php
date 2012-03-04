@@ -149,9 +149,9 @@ $WHITELIST_DOMAINS = array('immopoly.appspot.com');
 /**
  * CACHING
  */
-$enable_caching = false;
+$enable_caching = true;
 //how long after a cache will be renewed
-define(CACHE_TTL,600);//10 mins
+define(CACHE_TTL,300);//5 mins
 define(CACHE_DIR,'.cache');
 
 // ############################################################################
