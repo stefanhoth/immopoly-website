@@ -106,11 +106,13 @@
               </li>
             </ul>
           </div><!--/.nav-collapse -->
-          <form class="form-inline pull-right">
-            <input type="text" class="input-small disabled" disabled placeholder="Benutzername">
-            <input type="password" class="input-small disabled" disabled placeholder="Passwort">
-            <button type="submit" class="btn-small disabled" disabled>Login</button>
-          </form>
+          <div style="display: none;">
+            <form class="form-inline pull-right">
+              <input type="text" class="input-small disabled" disabled placeholder="Benutzername">
+              <input type="password" class="input-small disabled" disabled placeholder="Passwort">
+              <button type="submit" class="btn-small disabled" disabled>Login</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
