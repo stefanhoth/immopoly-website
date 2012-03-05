@@ -16,6 +16,8 @@
     <title>Immopoly :: Ein mobiles Makler-Spiel mit Echtdaten von ImmobilienScout24</title>
     <meta name="description" content="Ein mobiles Makler-Spiel mit Echtdaten von ImmobilienScout24">
     <meta name="author" content="Krautsourcing UG :: Team Immopoly">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
