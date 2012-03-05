@@ -36,10 +36,10 @@
     <link href="css/overrides.css" rel="stylesheet">
 
     <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    <link rel="shortcut icon" href="img/immopoly.png">
+    <link rel="apple-touch-icon" href="img/immopoly.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/immopoly.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/immopoly.png">
 
     <!-- G+-Page-Badge -->
     <link href="https://plus.google.com/115948347977579800149" rel="publisher" />
@@ -76,7 +76,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="/">Immopoly</a>
+          <a class="brand" href="/">
+            <img src="img/immopoly.png" alt="immopoly" />
+          </a>
           <div class="nav-collapse">
             <ul class="nav">
               <li class="home">
