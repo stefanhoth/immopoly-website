@@ -13,8 +13,9 @@
 	}
 
 
-.navbar .brand img{
-	height: 25px;
+.navbar .brand{
+	background: url(../img/layout/immopoly-brand.png) 20px no-repeat;
+	padding-left: 55px;
 }
 
 .navbar-inner .form-inline{

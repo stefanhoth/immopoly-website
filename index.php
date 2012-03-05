@@ -77,7 +77,7 @@
             <span class="icon-bar"></span>
           </a>
           <a class="brand" href="/">
-            <img src="img/immopoly.png" alt="immopoly" />
+            Immopoly
           </a>
           <div class="nav-collapse">
             <ul class="nav">
