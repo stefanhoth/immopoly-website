@@ -13,7 +13,7 @@
 <html lang="de">
   <head>
     <meta charset="utf-8">
-    <title>Immopoly :: Ein mobiles Makler-Spiel mit Echtdaten von ImmobilienScout24</title>
+    <title>Immopoly :: Erobere deinen Kiez</title>
     <meta name="description" content="Ein mobiles Makler-Spiel mit Echtdaten von ImmobilienScout24">
     <meta name="author" content="Krautsourcing UG :: Team Immopoly">
     

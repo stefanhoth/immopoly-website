@@ -1,7 +1,7 @@
       <!-- Main hero unit for a primary marketing message or call to action -->
       <div class="hero-unit">
         <h1>Immopoly</h1>
-        <p>Ein mobiles Makler-Spiel mit Echtdaten von ImmobilienScout24</p>
+        <p>Erobere deinen Kiez</p>
         <p>
           <a class="btn btn-large btn-primary" href="download.html">
             <i class="icon-download icon-white"></i>
