@@ -73,5 +73,5 @@
         </div>
       </div>
 
-      <p class="alert alert-info"><strong>Hinweis:</strong> Das Spiel funktioniert überall dort, wo Wohnungen zur Miete innerhalb des Angebots von <a href="http://www.immobilienscout24.de" title="Zur Website von ImmobilienScout24">ImmobilienScout24</a> zur Verfügung stehen.
+      <p class="alert alert-info"><strong>Hinweis:</strong> Das Spiel bisher nur in Deutschland, da wir die echten Wohnungsangebote innerhalb des Angebots von <a href="http://www.immobilienscout24.de" title="Zur Website von ImmobilienScout24">ImmobilienScout24.de</a> verwenden.
       </p>
