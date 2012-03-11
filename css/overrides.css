@@ -2,6 +2,9 @@
   .hero-unit {
 	  background-image: url(../img/layout/berlin-skyline-stripei-s.jpg);
   }
+  h1 {
+    font-size:5px;
+  }
 }
 .hero-unit{
 	background-image: url(../img/layout/berlin-skyline-stripe.jpg);
