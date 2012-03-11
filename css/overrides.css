@@ -1,3 +1,8 @@
+@media screen and (device-max-width:480) {
+  .hero-unit {
+	  background-image: url(../img/layout/berlin-skyline-stripei-s.jpg);
+  }
+}
 .hero-unit{
 	background-image: url(../img/layout/berlin-skyline-stripe.jpg);
 	background-position: center;
