@@ -1,11 +1,3 @@
-@media screen and (max-width:480px) {
-  .hero-unit {
-	  background-image: url(../img/layout/berlin-skyline-stripei-s.jpg);
-  }
-  h1 {
-    font-size:5px;
-  }
-}
 .hero-unit{
 	background-image: url(../img/layout/berlin-skyline-stripe.jpg);
 	background-position: center;
@@ -92,3 +84,12 @@ table#history_list p.btn-small{
 	border:1px dashed black;
 	margin: auto;
 }
+@media screen and (max-width:480px) {
+  .hero-unit {
+	  background-image: url(../img/layout/berlin-skyline-stripei-s.jpg);
+  }
+  h1 {
+    font-size:5px;
+  }
+}
+
