@@ -87,6 +87,7 @@ table#history_list p.btn-small{
 @media screen and (max-width:480px) {
   .hero-unit {
 	  background-image: url(../img/layout/immopoly-website-header-s.jpg);
+	  padding: 30px;
   }
   .hero-unit h1 {
     font-size:40px;
