@@ -1,4 +1,4 @@
-@media screen and (device-max-width:480) {
+@media screen and (max-width:480px) {
   .hero-unit {
 	  background-image: url(../img/layout/berlin-skyline-stripei-s.jpg);
   }
