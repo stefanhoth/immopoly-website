@@ -88,7 +88,7 @@ table#history_list p.btn-small{
   .hero-unit {
 	  background-image: url(../img/layout/immopoly-website-header-s.jpg);
   }
-  h1 {
+  .hero-unit h1 {
     font-size:5px;
   }
 }
