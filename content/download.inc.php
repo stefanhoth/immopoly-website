@@ -25,7 +25,7 @@
      
       <p style="text-align: center;">
         <a class="none" href="https://play.google.com/store/apps/details?id=org.immopoly.android">
-          <img src="img\layout\google-play-store-icon.png" alt="Google Play Store" />
+          <img src="img/layout/google-play-store-icon.png" alt="Google Play Store" />
           <span style="display:block;clear:both;width: 100%;">(click)</span>
         </a>
       </p>  
