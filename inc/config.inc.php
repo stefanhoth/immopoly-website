@@ -15,7 +15,12 @@
  		"description" => "Beschreibung",
  		"screenshots" => "Screenshots",
  		"download" => "Download",
- 		"livestats" => "Live-Status"
+ 		"livestats" => "Live-Status",
+ 		"helpandroid" => "Android-Hilfe"
+ 	);
+
+ 	$framelessPages = array(
+ 		'helpandroid'
  	);
 
 ?>

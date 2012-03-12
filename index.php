@@ -68,6 +68,13 @@
 
   </head>
   <body>
+    <?php 
+      if( isFrameless($page)){
+        the_page($page);
+        exit;
+      }
+    ?>
+
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">

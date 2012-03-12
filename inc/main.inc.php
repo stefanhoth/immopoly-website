@@ -11,6 +11,7 @@ function validateStartParams(){
 	}else{
 		$page=validatePageCall($_GET['page']);
 	}
+
 	return $page;
 }
 
@@ -25,7 +26,7 @@ function validatePageCall($page){
 	){
 		$page="home";
 	}	
-		
+
 	if( is_readable(the_filename($page))){
 		return $page;
 	}else if(is_readable(the_filename("home"))){
@@ -235,6 +236,11 @@ function getGermanDate($timestamp,$showTime=false) {
 		return $datum;			
 	}
 	
+}
+
+function isFrameless($page){
+	global $framelessPages;
+	return in_array($page,$framelessPages);
 }
 
 ?>
