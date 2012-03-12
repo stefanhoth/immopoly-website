@@ -9,7 +9,7 @@
     </p>
     <p style="text-align: center;">
     <a class="none" href="http://itunes.apple.com/de/app/immopoly/id496603059" title="Immopoly im Apple App Store für dein iPhone und iPad">
-    <img src="img\layout\app-store.png" alt="App Store" width="200" />
+    <img src="img/layout/app-store.png" alt="App Store" width="200" />
     <span style="display:block;clear:both;width: 100%;">(click)</span>
     </a> 
     </p>
