@@ -13,7 +13,7 @@
     <span style="display:block;clear:both;width: 100%;">(click)</span>
     </a> 
     </p>
-    <h4>BETA / ALPHA version</h4>
+    <h4>Offizieller Release / ALPHA version</h4>
     <p class="alert alert-info">
       Leider erlaubt es die Distributionspolitik von Apple nicht, dass wir iOS-Nutzern BETA- oder ALPHA-Versionen zum Download bereitstellen. Daher gibt es hier jeweils nur die Version, die sich im App Store befindet. 
     </p>
@@ -21,14 +21,11 @@
   <div class="span6">
       <h2>Android</h2>
       <h4>Offizielle, stabile Version</h4>
-      <p>Wir arbeiten derzeit mit Hochdruck an der Fertigstellung des Releases für den <strong>Android Market</strong>.</p>
-      <p>Bis dahin bieten wir euch zwei verschiedene Möglichkeiten am Spielgeschehen teilzunehmen:</p>
+      <p>Hier findest Du die offizielle Version im <strong>Google Play Store</strong>.</p>
      
-      <h4>BETA version</h4> 
-<p class="alert alert-warning"><strong>Hinweis:</strong> Diese Version ist bereits getestet, kann aber noch Fehler enthalten. Wenn Du Fehler findest, hilfst Du uns sehr, wenn Du diese meldest.</p>
       <p style="text-align: center;">
-        <a class="none" href="http://immopoly.appspot.com/Immopoly.apk">
-          <img src="img\layout\immopoly-download-qr.png" alt="QR-code" />
+        <a class="none" href="https://play.google.com/store/apps/details?id=org.immopoly.android">
+          <img src="img\layout\google-play-store-icon.png" alt="Google Play Store" />
           <span style="display:block;clear:both;width: 100%;">(click)</span>
         </a>
       </p>  
