@@ -13,6 +13,11 @@
 	}
 
 
+.navbar .brand{
+	background: url(../img/layout/immopoly-brand.png) 20px no-repeat;
+	padding-left: 55px;
+}
+
 .navbar-inner .form-inline{
 	padding-top: 5px;
 	margin: 0;	
@@ -64,9 +69,28 @@ table#top_list td{
 		padding-right: 15px;
 	}
 
+table#history_list a.btn-small{
+	margin-left: 5px;
+	margin-top: 5px;
+}
+
+table#history_list p.btn-small{
+	text-align: center;
+}
 
 #heatmapArea{
-	width:800px;
+	width:500px;
 	height:600px;
 	border:1px dashed black;
+	margin: auto;
 }
+@media screen and (max-width:480px) {
+  .hero-unit {
+	  background-image: url(../img/layout/immopoly-website-header-s.jpg);
+	  padding: 30px;
+  }
+  .hero-unit h1 {
+    font-size:40px;
+  }
+}
+

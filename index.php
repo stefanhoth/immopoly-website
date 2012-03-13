@@ -13,9 +13,11 @@
 <html lang="de">
   <head>
     <meta charset="utf-8">
-    <title>Immopoly :: Ein mobiles Makler-Spiel mit Echtdaten von ImmobilienScout24</title>
+    <title>Immopoly :: Erobere deinen Kiez</title>
     <meta name="description" content="Ein mobiles Makler-Spiel mit Echtdaten von ImmobilienScout24">
     <meta name="author" content="Krautsourcing UG :: Team Immopoly">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
@@ -34,10 +36,10 @@
     <link href="css/overrides.css" rel="stylesheet">
 
     <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    <link rel="shortcut icon" href="img/immopoly.png">
+    <link rel="apple-touch-icon" href="img/immopoly.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/immopoly.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/immopoly.png">
 
     <!-- G+-Page-Badge -->
     <link href="https://plus.google.com/115948347977579800149" rel="publisher" />
@@ -66,6 +68,13 @@
 
   </head>
   <body>
+    <?php 
+      if( isFrameless($page)){
+        the_page($page);
+        exit;
+      }
+    ?>
+
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -74,7 +83,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="/">Immopoly</a>
+          <a class="brand" href="/">
+            Immopoly
+          </a>
           <div class="nav-collapse">
             <ul class="nav">
               <li class="home">
@@ -104,11 +115,13 @@
               </li>
             </ul>
           </div><!--/.nav-collapse -->
-          <form class="form-inline pull-right">
-            <input type="text" class="input-small disabled" disabled placeholder="Benutzername">
-            <input type="password" class="input-small disabled" disabled placeholder="Passwort">
-            <button type="submit" class="btn-small disabled" disabled>Login</button>
-          </form>
+          <div style="display: none;">
+            <form class="form-inline pull-right">
+              <input type="text" class="input-small disabled" disabled placeholder="Benutzername">
+              <input type="password" class="input-small disabled" disabled placeholder="Passwort">
+              <button type="submit" class="btn-small disabled" disabled>Login</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -151,7 +164,7 @@
       <script type="text/javascript">
         //do on start
         $(document).ready(function() {
-          updateTable("#top_makler","top");
+          updateTable("#top_makler","top", 0, 20);
           updateTable("#history_list","history");
           initHeatmap();          
         });

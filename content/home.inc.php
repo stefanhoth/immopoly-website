@@ -1,7 +1,7 @@
       <!-- Main hero unit for a primary marketing message or call to action -->
       <div class="hero-unit">
         <h1>Immopoly</h1>
-        <p>Ein mobiles Makler-Spiel mit Echtdaten von ImmobilienScout24</p>
+        <p>Erobere deinen Kiez</p>
         <p>
           <a class="btn btn-large btn-primary" href="download.html">
             <i class="icon-download icon-white"></i>
@@ -73,5 +73,5 @@
         </div>
       </div>
 
-      <p class="alert alert-info"><strong>Hinweis:</strong> Das Spiel funktioniert überall dort, wo Wohnungen zur Miete innerhalb des Angebots von <a href="http://www.immobilienscout24.de" title="Zur Website von ImmobilienScout24">ImmobilienScout24</a> zur Verfügung stehen.
+      <p class="alert alert-info"><strong>Hinweis:</strong> Das Spiel bisher nur in Deutschland, da wir die echten Wohnungsangebote innerhalb des Angebots von <a href="http://www.immobilienscout24.de" title="Zur Website von ImmobilienScout24">ImmobilienScout24.de</a> verwenden.
       </p>
